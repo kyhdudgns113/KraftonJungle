@@ -7,13 +7,13 @@ dir = [[0, 1], [-1, 0], [0, -1], [1, 0]]
 
 n = int(input())
 
-isHere = [[0] * n for i in range(n)]
-isApple = [[0] * n for i in range(n)]
+isHere = list(list(0 for _ in range(101)) for _ in range(101))
+isApple = list(list(0 for _ in range(101)) for _ in range(101))
 
 k = int(input())
 for _ in range(k):
     a, b = map(int, input().split())
-    isApple[a - 1][b - 1] = 1
+    isApple[a][b] = 1
 
 l = int(input())
 move = deque()
@@ -23,9 +23,9 @@ for _ in range(l):
     move.append([a, b])
 
 dq = deque()
-head = [0, 0]
+head = [1, 1]
 dq.append(head)
-isHere[0][0] = 1
+isHere[1][1] = 1
 
 idx = 0
 cnt = 0
@@ -34,8 +34,8 @@ while True:
     b = head[1] + dir[idx][1]
     head = [a, b]
     cnt += 1
-    if 0 <= a < n and \
-            0 <= b < n and \
+    if 1 <= a <= n and \
+            1 <= b <= n and \
             isHere[a][b] == 0:
         if isApple[a][b] == 1:
             dq.append(head)
