@@ -14,6 +14,7 @@ for _ in range(m):
 isVisitedDFS = list(0 for _ in range(n + 1))
 isVisitedBFS = list(0 for _ in range(n + 1))
 
+
 def dfs(v):
     global isVisitedDFS, isConnected
     isVisitedDFS[v] = 1
