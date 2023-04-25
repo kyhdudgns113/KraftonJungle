@@ -13,6 +13,12 @@ for _ in range(m):
     connection_list[g1].append(g2)
 
 
+##########################################################################
+#
+#   return_lower_count : now_bead 보다 가벼운 구슬의 개수를 리턴해주는 변수
+#   dfs(next_bead) 가 호출된다는건 now_bead 보다 가벼운 구슬이 존재한다는 의미이다.
+#
+##########################################################################
 def dfs(now_bead):
     global connection_list, bigger_count, lower_count, is_visit
     is_visit[now_bead] = True
